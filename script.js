@@ -43,7 +43,7 @@ function loadNextCard() {
 
     if (currentIndex >= cards.length) {
         // End of cards
-        game.innerHTML = '<div class="end-message"></div>';
+        game.innerHTML = '<div class="end-message">End of cards</div>';
         return;
     }
 
