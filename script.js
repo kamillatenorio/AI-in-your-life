@@ -7,11 +7,11 @@ const cards = [
     { src: 'recommendation.jpeg', label: 'AI Recommendation Systems (e.g., Netflix Recommendation System)', type: 'use' },
     { src: 'transcription.jpeg', label: 'AI Transcription Systems (e.g., OtterAI, KonchAI)', type: 'use' },
     { src: 'grammarly.jpeg', label: 'AI Writing Assistants Systems (e.g., Grammarly)', type: 'use' },
-    { src: 'contentGenerator.png', label: 'AI Chatbot Systems (e.g., ChatGPT)', type: 'use' },
-    { src: 'translation.jpeg', label: 'AI Translation Systems (e.g., Google Translator, DeepL)', type: 'use' },
-    { src: 'recommendation.jpeg', label: 'AI Recommendation Systems (e.g., Netflix Recommendation System)', type: 'use' },
-    { src: 'transcription.jpeg', label: 'AI Transcription Systems (e.g., OtterAI, KonchAI)', type: 'use' },
-    { src: 'grammarly.jpeg', label: 'AI Writing Assistants Systems (e.g., Grammarly)', type: 'use' },
+    { src: 'image_generation.png', label: 'AI Image Generation Systems (e.g., DALL-E, Midjourney)', type: 'use' },
+    { src: 'personal_assistant.png', label: 'AI Personal Assistants (e.g., Siri, Alexa, Google Assistant)', type: 'use' },
+    { src: 'facial_recognition.png', label: 'AI Facial Recognition Systems (e.g., Clearview AI, Face++)', type: 'use' },
+    { src: 'music_composition.png', label: 'AI Music Composition Systems (e.g., AIVA, Amper Music)', type: 'use' },
+    { src: 'autonomous_vehicle.png', label: 'AI Autonomous Vehicles (e.g., Tesla Autopilot, Waymo)', type: 'use' }
 ];
 
 let currentIndex = 0;

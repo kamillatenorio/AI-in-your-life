@@ -102,13 +102,12 @@ body {
 }
 
 .end-message {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     color: #333;
     padding: 20px;
     text-align: center;
-    margin: 40px 0; /* Add margin above and below the message */
-    border: 2px solid #ddd;
+    margin: 40px 20px; /* Add margin above, below, left, and right */
     border-radius: 10px;
     background-color: #fff;
     max-width: 90%;
@@ -130,9 +129,9 @@ body {
     }
 
     .end-message {
-        font-size: 18px;
+        font-size: 20px;
         padding: 15px;
-        margin: 30px 0; /* Adjust margin for smaller screens */
+        margin: 30px 10px; /* Adjust margin for smaller screens */
     }
 }
 
@@ -150,8 +149,8 @@ body {
     }
 
     .end-message {
-        font-size: 16px;
+        font-size: 18px;
         padding: 10px;
-        margin: 20px 0; /* Further adjust margin for smallest screens */
+        margin: 20px 5px; /* Further adjust margin for smallest screens */
     }
 }
