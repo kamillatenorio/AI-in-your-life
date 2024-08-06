@@ -6,8 +6,12 @@ const cards = [
     { src: 'translation.jpeg', label: 'AI Translation Systems (e.g., Google Translator, DeepL)', type: 'use' },
     { src: 'recommendation.jpeg', label: 'AI Recommendation Systems (e.g., Netflix Recommendation System)', type: 'use' },
     { src: 'transcription.jpeg', label: 'AI Transcription Systems (e.g., OtterAI, KonchAI)', type: 'use' },
-    { src: 'grammarly.jpeg', label: 'AI Writing Assistants Systems (e.g., Grammarly)', type: 'use' }
-    // Add more items as needed
+    { src: 'grammarly.jpeg', label: 'AI Writing Assistants Systems (e.g., Grammarly)', type: 'use' },
+    { src: 'contentGenerator.png', label: 'AI Chatbot Systems (e.g., ChatGPT)', type: 'use' },
+    { src: 'translation.jpeg', label: 'AI Translation Systems (e.g., Google Translator, DeepL)', type: 'use' },
+    { src: 'recommendation.jpeg', label: 'AI Recommendation Systems (e.g., Netflix Recommendation System)', type: 'use' },
+    { src: 'transcription.jpeg', label: 'AI Transcription Systems (e.g., OtterAI, KonchAI)', type: 'use' },
+    { src: 'grammarly.jpeg', label: 'AI Writing Assistants Systems (e.g., Grammarly)', type: 'use' },
 ];
 
 let currentIndex = 0;
@@ -19,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function handleSwipe(event) {
     const card = event.target;
     let offsetX;
-    
+
     if (event.type === 'dragend') {
         offsetX = event.offsetX;
     } else if (event.type === 'touchend') {
@@ -27,7 +31,7 @@ function handleSwipe(event) {
         offsetX = touch.pageX - card.getBoundingClientRect().left;
     }
 
-    const currentCard = cards[currentIndex - 1];  // currentIndex has already been incremented
+    const currentCard = cards[currentIndex - 1]; // currentIndex has already been incremented
     const isuseSwipe = offsetX >= card.offsetWidth / 2;
 
     if (isuseSwipe && currentCard.type === 'use') {
@@ -49,8 +53,8 @@ function loadNextCard() {
     const game = document.getElementById('game');
 
     if (currentIndex >= cards.length) {
-        // End of cards
-        game.innerHTML = '<div class="end-message">End of cards</div>';
+        // End of cards, show final message
+        displayFinalMessage();
         return;
     }
 
@@ -64,4 +68,32 @@ function loadNextCard() {
     `;
 
     currentIndex++;
+}
+
+function displayFinalMessage() {
+    const game = document.getElementById('game');
+    let messages = [];
+
+    if (correct <= 3) {
+        messages = [
+            "You're just starting your AI journey, but there's a whole world of possibilities ahead! Keep exploring and see how AI can enrich your daily life!",
+
+        ];
+    } else if (correct <= 7) {
+        messages = [
+            "AI is becoming a great ally in your daily life! You're on the right track to making the most out of these amazing tools.",
+        ];
+    } else {
+        messages = [
+            "Wow! You're a pro at integrating AI into your routine, maximizing efficiency and productivity. Keep being an AI champion!",
+        ];
+    }
+
+    // Randomly select a message from the chosen category
+    const message = messages[Math.floor(Math.random() * messages.length)];
+
+    // Hide the labels and show the message
+    document.querySelector('.label-left').style.display = 'none';
+    document.querySelector('.label-right').style.display = 'none';
+    game.innerHTML = `<div class="end-message">${message}</div>`;
 }
