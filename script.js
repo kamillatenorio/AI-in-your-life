@@ -2,7 +2,7 @@ let correct = 0;
 let incorrect = 0;
 
 const cards = [
-    { src: 'contentGenerator.png', label: 'AI Chatbot Systems (e.g., ChatGPT)', type: 'use' },
+    { src: 'contentGenerator.png', label: 'AI Chatbot Systems (e.g., ChatGPT, Gemini, Perplexity, Claude)', type: 'use' },
     { src: 'translation.jpeg', label: 'AI Translation Systems (e.g., Google Translator, DeepL)', type: 'use' },
     { src: 'recommendation.jpeg', label: 'AI Recommendation Systems (e.g., Netflix Recommendation System)', type: 'use' },
     { src: 'transcription.jpeg', label: 'AI Transcription Systems (e.g., OtterAI, KonchAI)', type: 'use' },
