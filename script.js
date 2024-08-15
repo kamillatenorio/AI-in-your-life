@@ -96,15 +96,4 @@ function displayFinalMessage() {
     document.querySelector('.label-left').style.display = 'none';
     document.querySelector('.label-right').style.display = 'none';
     game.innerHTML = `<div class="end-message">${message}</div>`;
-
-    // Add Next button
-    game.innerHTML = `
-        <div class="end-message">${message}</div>
-        <button id="nextButton" class="next-button">Next</button>
-    `;
-
-    // Event listener for Next button
-    document.getElementById('nextButton').addEventListener('click', function() {
-        window.location.href = 'introduction2.html';
-    });
 }
