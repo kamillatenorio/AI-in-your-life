@@ -1,5 +1,5 @@
-let correct = 0;
-let incorrect = 0;
+let using = 0;
+let notUsing = 0;
 
 const cards = [
     { src: 'contentGenerator.png', label: 'AI Chatbot Systems (e.g., ChatGPT)', type: 'use' },
@@ -35,18 +35,12 @@ function handleSwipe(event) {
     const isuseSwipe = offsetX >= card.offsetWidth / 2;
 
     if (isuseSwipe && currentCard.type === 'use') {
-        correct++;
+        using++;
     } else {
-        incorrect++;
+        notUsing++;
     }
 
-    updateResults();
     loadNextCard();
-}
-
-function updateResults() {
-    document.getElementById('correct').textContent = correct;
-    document.getElementById('incorrect').textContent = incorrect;
 }
 
 function loadNextCard() {
@@ -74,26 +68,38 @@ function displayFinalMessage() {
     const game = document.getElementById('game');
     let messages = [];
 
-    if (correct <= 3) {
+    if (using <= 3) {
         messages = [
-            "You're just starting your AI journey, but there's a whole world of possibilities ahead! Keep exploring and see how AI can enrich your daily life!",
-
+            "You're just starting your AI journey, but there's a whole world of possibilities ahead!",
         ];
-    } else if (correct <= 7) {
+    } else if (using <= 7) {
         messages = [
-            "AI is becoming a great ally in your daily life! You're on the right track to making the most out of these amazing tools.",
+            "AI is becoming a great ally in your daily life!",
         ];
     } else {
         messages = [
-            "Wow! You're a pro at integrating AI into your routine, maximizing efficiency and productivity. Keep being an AI champion!",
+            "Wow! You're a pro at integrating AI into your routine, maximizing efficiency and productivity.",
         ];
     }
 
     // Randomly select a message from the chosen category
     const message = messages[Math.floor(Math.random() * messages.length)];
 
-    // Hide the labels and show the message
+    // Hide the labels and show the message with results
     document.querySelector('.label-left').style.display = 'none';
     document.querySelector('.label-right').style.display = 'none';
-    game.innerHTML = `<div class="end-message">${message}</div>`;
+    
+    game.innerHTML = `
+        <div class="card end-message">
+            <p>${message}</p>
+            <div class="results">
+                <p>You are using <span id="using">${using}</span> of the AI systems presented. </p> 
+            </div>
+        </div>
+    `;
+}
+
+function updateResults() {
+    document.getElementById('using').textContent = using;
+    document.getElementById('notUsing').textContent = notUsing;
 }
