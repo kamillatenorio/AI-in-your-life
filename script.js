@@ -93,7 +93,7 @@ function displayFinalMessage() {
         <div class="card end-message">
             <p>${message}</p>
             <div class="results">
-                <p>You are using <span id="using">${using}</span> of the AI systems presented. </p> 
+                <p>You are using <span id="using">${using}</span> of the 10 AI systems presented. </p> 
             </div>
         </div>
     `;
