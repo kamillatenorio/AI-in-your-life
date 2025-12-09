@@ -2,16 +2,16 @@ let using = 0;
 let notUsing = 0;
 
 const cards = [
-    { src: 'contentGenerator.png', label: 'AI Chatbot Systems (e.g., ChatGPT)', type: 'use' },
-    { src: 'recommendation.jpeg', label: 'AI Recommendation Systems (e.g., Netflix Recommendation System)', type: 'use' },
-    { src: 'personal_assistant.jpeg', label: 'AI Personal Assistants (e.g., Siri, Alexa, Google Assistant)', type: 'use' },
-    { src: 'image_generation.png', label: 'AI Image Generation Systems (e.g., DALL-E, Midjourney)', type: 'use' },
-    { src: 'translation.png', label: 'AI Translation Systems (e.g., Google Translator, DeepL)', type: 'use' },
-    { src: 'autonomous_vehicle.png', label: 'AI Autonomous Vehicles (e.g., Tesla Autopilot, Waymo)', type: 'use' },
-    { src: 'transcription.jpeg', label: 'AI Transcription Systems (e.g., OtterAI, KonchAI)', type: 'use' },
-    { src: 'grammarly.jpeg', label: 'AI Writing Assistants Systems (e.g., Grammarly)', type: 'use' },
-    { src: 'CoPilot.png', label: 'AI Coding Assistant (e.g., GitHub Copilot)', type: 'use' },
-    { src: 'music_composition.png', label: 'AI Music Composition Systems (e.g., Filmora AI Music Composer, AIVA)', type: 'use' },
+    { src: 'image_generation.png', label: 'AI image generation systems (e.g. DALL-E, Midjourney)', type: 'use' },
+    { src: 'grammarly.jpeg', label: 'AI writing assistant systems (e.g. Grammarly)', type: 'use' },
+    { src: 'translation.png', label: 'AI translation systems (e.g. Google Translator, DeepL)', type: 'use' },
+    { src: 'contentGenerator.png', label: 'AI chatbot systems (e.g. ChatGPT)', type: 'use' },
+    { src: 'recommendation.jpeg', label: 'AI recommendation systems (e.g. Netflix recommendation system)', type: 'use' },
+    { src: 'personal_assistant.jpeg', label: 'AI voice assistants (e.g. Siri, Alexa, Google Assistant)', type: 'use' },
+    { src: 'autonomous_vehicle.png', label: 'Autonomous AI vehicles (e.g. Tesla Autopilot, Waymo)', type: 'use' },
+    { src: 'transcription.jpeg', label: 'AI transcription systems (e.g. OtterAI, KonchAI)', type: 'use' },
+    { src: 'CoPilot.png', label: 'AI coding assistant (e.g. GitHub Copilot)', type: 'use' },
+    { src: 'music_composition.png', label: 'AI music composition systems (e.g. Filmora AI Music Composer, beatoven.ai)', type: 'use' },
 ];
 
 let currentIndex = 0;
@@ -70,15 +70,15 @@ function displayFinalMessage() {
 
     if (using <= 3) {
         messages = [
-            "You're just starting your AI journey, but there's a whole world of possibilities ahead!",
+            "You are just at the beginning of your AI journey, but a whole world of possibilities lies ahead of you!",
         ];
     } else if (using <= 7) {
         messages = [
-            "AI is becoming a great ally in your daily life!",
+            "AI systems are great allies in your daily life!",
         ];
     } else {
         messages = [
-            "Wow! You're a pro at integrating AI into your routine, maximizing efficiency and productivity.",
+            "Wow! You are a pro at integrating AI systems into your daily routine, maximizing efficiency and productivity.",
         ];
     }
 
@@ -92,9 +92,9 @@ function displayFinalMessage() {
     game.innerHTML = `
         <div class="card end-message">
             <p>${message}</p>
-            <div class="results">
-                <p>You are using <span id="using">${using}</span> of the 10 AI systems presented. </p> 
-            </div>
+            <!-- <div class="results">
+                <p>You use <span id="using">${using}</span> out of 10 presented AI systems.</p> 
+            </div>!-->
         </div>
     `;
 }
